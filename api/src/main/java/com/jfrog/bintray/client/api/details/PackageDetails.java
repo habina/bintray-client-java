@@ -58,6 +58,8 @@ public class PackageDetails {
     private List<String> versions;
     @JsonProperty(value = "licenses")
     private List<String> licenses;
+    @JsonProperty(value = "custom_licenses")
+    private List<String> custom_licenses;
     @JsonIgnore
     private String latestVersion;
     @JsonIgnore
@@ -133,6 +135,11 @@ public class PackageDetails {
 
     public PackageDetails licenses(List<String> licenses) {
         this.licenses = licenses;
+        return this;
+    }
+
+    public PackageDetails custom_licenses(List<String> custom_licenses) {
+        this.custom_licenses = custom_licenses;
         return this;
     }
 
@@ -302,8 +309,16 @@ public class PackageDetails {
         return licenses;
     }
 
+    public List<String> getCustomLicenses() {
+        return custom_licenses;
+    }
+
     public void setLicenses(List<String> licenses) {
         this.licenses = licenses;
+    }
+
+    public void setCustomLicenses(List<String> custom_licenses) {
+        this.custom_licenses = custom_licenses;
     }
 
     @JsonIgnore
